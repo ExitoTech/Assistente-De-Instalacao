@@ -74,18 +74,18 @@ if [ $? -eq 0 ];
 			sudo systemctl enable docker
 			sleep 2
 			clear
-			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Instalando Docker! Quase lá."
 			sleep 2
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Docker instalado!"
 			clear
 			echo "Neste momento tambem iremos instalar o MySql, os dados que são capturados irão ser armazenados nele ;D"
 			sudo docker pull mysql:5.7
-			sudo su
-			sudo docker run -d -p 3306:3306 --name exitoTech -e "MYSQLDATABASE=exitoTech" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
-			docker exec -it exitoTech bash
-			mysql -u root -p
-			urubu100
-
+			clear
+			sleep 2
+			echo "Baixando nossa aplicação..."
+			git clone https://github.com/ExitoTech/Executavel-ExitoTech-GUI.git
+			cd Executavel-ExitoTech-GUI
+			chmod 777 exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar
+			java -jar exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar
 			sleep 2
 			
 			clear
