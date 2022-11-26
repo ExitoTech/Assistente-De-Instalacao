@@ -22,6 +22,28 @@ if [ $? -eq 0 ];
 	then
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) Opa você já tem o java instalado!!"
 		sleep 2
+		echo "Deseja instalar nossa aplicação?"
+		read inst
+		if [ \"$inst\" == \"Y\" ];
+		then
+			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu instalar nossa aplicacão"
+			sleep 2
+			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Instalando.."
+			sleep 2
+			git clone https://github.com/ExitoTech/Executavel-ExitoTech-GUI.git
+			cd Executavel-ExitoTech-GUI
+			chmod 777 exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar
+			java -jar exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar
+			sleep 2
+			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Instalando! Quase lá."
+			sleep 2
+			echo "instalado!"
+			clear
+			
+		else 	
+			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Você optou por não instalar nossa aplicação por enquanto, até a próxima então!"
+			sleep 1
+		fi
 	else
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Opa! Não identifiquei nenhum java instalado, mas sem problemas, irei resolver isso agora!"
 		sleep 2
@@ -108,6 +130,8 @@ echo "
 		fi
 			
 fi
+
+
 
 
 
